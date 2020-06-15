@@ -10,8 +10,7 @@
     "build": "rollup -c",
     "commit": "git-cz",
     "version": "standard-version",
-    "release": "git push --follow-tags && npm publish",
-    "test": "node script/changeJson.js && cd test && npm run serve"
+    "release": "git push --follow-tags && npm publish"
   },
   "publishConfig": {
     "registry": ""

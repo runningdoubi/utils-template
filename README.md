@@ -4,5 +4,6 @@
 - [x] babel
 - [x] eslint
 - [x] commitlint
+- [x] Automatic generated CHANGELOG.md
 - [ ] jest
 - [ ] e2e
