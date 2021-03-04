@@ -5,5 +5,5 @@
 - [x] eslint
 - [x] commitlint
 - [x] Automatic generated CHANGELOG.md
-- [ ] jest
+- [x] jest
 - [ ] e2e
