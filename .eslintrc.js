@@ -1,27 +1,38 @@
-
 module.exports = {
-    parser: 'babel-eslint',
-    extends: [
-        '@ecomfe/eslint-config'
-    ],
+    root: true,
+    globals: {},
+    parser: '@babel/eslint-parser',
     parserOptions: {
-        babelOptions: {
-            configFile: './babel.config.js'
-        }
+        sourceType: 'module',
     },
+    ignorePatterns: ['components.d.ts'],
+    extends: [
+        '@ecomfe/eslint-config',
+    ],
     rules: {
-        'comma-dangle': ['error', {
-            objects: 'never'
-        }]
+        'no-unused-vars': 'error',
+        'babel/new-cap': 0,
     },
     overrides: [
         {
-            files: [
-                '**/*.spec.js'
+            files: ['*.ts'],
+            parser: '@typescript-eslint/parser',
+            parserOptions: {
+                project: ['./tsconfig.json', './tsconfig.node.json'],
+            },
+            rules: {
+                '@typescript-eslint/member-delimiter-style': [
+                    'error',
+                    {
+                        'singleline': {
+                            'delimiter': 'semi',
+                        },
+                    },
+                ],
+            },
+            extends: [
+                '@ecomfe/eslint-config/typescript',
             ],
-            env: {
-                jest: true
-            }
-        }
-    ]
+        },
+    ],
 };
